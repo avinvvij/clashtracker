@@ -17,9 +17,8 @@ class TopPlayers extends Component{
         if(top_player_reducer.top_players){
         return top_player_reducer.top_players.map((Player)=>{
                 if(Player){
-                    console.log(Player);
                     return(
-                        <div>
+                        <div key={Player.tag}>
                             {Player.name}
                         </div>
                     );
