@@ -2,3 +2,24 @@
     margin-bottom: 0px;
 }
 
+.container{
+    margin-left: 15px;
+    margin-right: 15px;
+    width: auto;
+}
+
+.nav-a{
+    color: #9d9d9d;
+    
+}
+
+.nav-a:hover{
+    color: #FFFFFF;
+}
+.nav-a:focus {
+    color: #9d9d9d;
+}
+.nav-a:hover , .nav-a:focus{
+    text-decoration: transparent;
+}
+
