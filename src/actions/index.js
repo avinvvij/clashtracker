@@ -17,5 +17,22 @@ export function getTopPlayers(){
             type: 'TOP_PLAYERS',
             payload: request
         }
-    
+   
+}
+
+export function getTopClans(){
+    const top_clans_url = server_url+"top/clan";
+    const request = axios.get(top_clans_url ,  {headers:{
+        auth: '3e5f585e785f481291fa3cd0abaf4d738004b538732f46728bae5965862580a0'
+    }
+}).then(function(response){
+    console.log(response);
+    return response.data;
+}).catch(function(error){
+    console.log(error);
+});
+return {
+    type: 'TOP_CLANS',
+    payload: request
+}
 }

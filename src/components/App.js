@@ -1,8 +1,6 @@
 import React,{Component} from 'react';
 import {Carousel , CarouselItem} from 'react-bootstrap';
 
-//components
-import Header from './Header'
 class App extends Component{
 
     render(){

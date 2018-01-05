@@ -37,7 +37,7 @@ class Header extends Component{
     render (){
         return(
         <div>
-	<Navbar inverse collapseOnSelect className="custom-nav" sticky>
+	<Navbar inverse collapseOnSelect className="custom-nav" fixedTop>
 		<Navbar.Header>
 			<Navbar.Brand>
 				<Link to="/">Clash Tracker</Link>
@@ -77,8 +77,10 @@ class Header extends Component{
                     </Link>
 				</NavItem>
 				<NavItem>
-					Top Clans
-				</NavItem>
+                <Link to = "/topclans" className="nav-a">
+                    Top Clans
+                </Link>
+            </NavItem>
 			</Nav>
 			
 		</Navbar.Collapse>

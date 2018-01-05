@@ -94,7 +94,7 @@ class TopPlayers extends Component{
                    <TableHeaderColumn dataField = "trophies">Trophies</TableHeaderColumn>
                    <TableHeaderColumn dataField = "clan.name">Clan</TableHeaderColumn>
                 </BootstrapTable> */}
-                <Table responsive>
+                <Table className = "table-custom" responsive>
                     <thead>
 			            <tr>
                             <th>Rank</th>

@@ -10,6 +10,7 @@ import PromiseMiddleware from 'redux-promise';
 import App from './components/App'
 import TopPlayers from './components/TopPlayers'
 import Header from './components/Header'
+import TopClans from './components/TopClans'
 
 //reducer
 import allReducers from './reducers'
@@ -33,6 +34,7 @@ ReactDom.render(
             <Header />
             <Route exact path = "/" component = {App} />
             <Route exact path = "/topplayers" component={TopPlayers} />
+            <Route exact path = "/topclans" component={TopClans} />
         </div> 
     </BrowserRouter>
     </div>
