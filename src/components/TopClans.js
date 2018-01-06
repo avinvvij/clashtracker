@@ -34,7 +34,7 @@ class TopClans extends Component{
                                 {Clan.score}
                             </td>
                             <td>
-                                {Clan.memberCount}
+                                {Clan.memberCount}/50
                             </td>
                             <td>
                                 {Clan.previousRank}
