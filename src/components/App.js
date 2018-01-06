@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Carousel , CarouselItem} from 'react-bootstrap';
+import {Carousel , CarouselItem , ResponsiveEmbed} from 'react-bootstrap';
 
 class App extends Component{
 
@@ -12,7 +12,6 @@ class App extends Component{
                 <CarouselItem>
                   <img src={image_carousel_item1} />  
                   <Carousel.Caption>
-				    <h3>Keep A Track Of Your Chest Cycle</h3>
 			    </Carousel.Caption>
                 </CarouselItem>
                 <CarouselItem>
