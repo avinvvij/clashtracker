@@ -24,6 +24,7 @@ class TopPlayers extends Component{
                     var clanName = "N/A"
                     var badge_img_src ="";
                 }
+                var league_icon = "http://www.clashapi.xyz/images/leagues/"+Player.arena.name.toLowerCase().replace(' ','-')+".png";
                 if(Player){
                     i++;
                     return(
@@ -43,6 +44,9 @@ class TopPlayers extends Component{
                             <td>
                                 
                                <img height={28} width={25} alt="" src = {badge_img_src}/> {clanName}
+                            </td>
+                            <td>
+                            <img height={28} width={25} alt="" src = {league_icon}/>
                             </td>
                             <td>
                                 {Player.previousRank}
@@ -102,6 +106,7 @@ class TopPlayers extends Component{
                             <th>Name</th>
                             <th>Trophies</th>
                             <th>Clan</th>
+                            <th>League</th>
                             <th>Previous Rank</th>
 			            </tr>
                         {this.return_top_player_list(this.props)}
