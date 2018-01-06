@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Carousel , CarouselItem , ResponsiveEmbed} from 'react-bootstrap';
-
+import  styles from '../styles/main.css'
 class App extends Component{
 
     render(){

@@ -8,16 +8,19 @@ class Header extends Component{
         super(props);
         this.state = {
             search_place_holder: 'Player Tag #XXXXXX',
-            dropdown_title: 'Player'
+            dropdown_title: 'Player',
+            player_tag: ''
         }
     }
 
-    onPlayerIdChange(event){
+    onPlayerIdChange = (event)=>{
         console.log(event.target.value);
+        this.setState({player_tag: event.target.value});
     }
 
-    playerInputClicked(event){
+    playerInputClicked = (event)=>{
         event.preventDefault();
+        console.log(this.state.player_tag);
     }
 
     searchDropDownClicked(id){
@@ -47,7 +50,7 @@ class Header extends Component{
 		</Navbar.Header>
             <Nav>
                 <Navbar.Form>
-                <form> 
+                <form onSubmit = {this.playerInputClicked}> 
                     <FormGroup className = "custom-header-form" >
                         <InputGroup>
                     <DropdownButton className="custom-dropdown-button"
@@ -59,9 +62,9 @@ class Header extends Component{
                         <MenuItem key="2" onClick={()=>this.searchDropDownClicked(2)}>Clan</MenuItem>
                         <MenuItem key="3" onClick={()=>this.searchDropDownClicked(3)}>Tournament</MenuItem>
 				    </DropdownButton>
-				    <FormControl type="text" placeholder={this.state.search_place_holder} />
+				    <FormControl type="text"  onChange = {this.onPlayerIdChange} placeholder={this.state.search_place_holder} />
 				        <InputGroup.Button className = "custom-header-input" className="custom-search-button">
-					        <Button c><Glyphicon glyph="search" /></Button>
+					        <Link to="/profile/1"><Button c><Glyphicon glyph="search" /></Button></Link>
 				        </InputGroup.Button>
 			        </InputGroup>
                     </FormGroup>

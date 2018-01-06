@@ -36,3 +36,19 @@ return {
     payload: request
 }
 }
+
+export function getPlayerProfile(player_tag){
+    const player_profile_url = server_url + "player/"+player_tag;
+    const request = axios.get(player_profile_url , {headers:{
+        auth: '3e5f585e785f481291fa3cd0abaf4d738004b538732f46728bae5965862580a0'
+    }})
+    .then(function(response){
+        return response.data;
+    })
+    .catch(function(error){console.log(error)});
+
+    return {
+        type: 'PLAYER_PROFILE',
+        payload: request
+    }
+}

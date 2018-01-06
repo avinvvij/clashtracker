@@ -11,6 +11,7 @@ import App from './components/App'
 import TopPlayers from './components/TopPlayers'
 import Header from './components/Header'
 import TopClans from './components/TopClans'
+import PlayerProfile from './components/PlayerProfile'
 
 //reducer
 import allReducers from './reducers'
@@ -35,6 +36,7 @@ ReactDom.render(
             <Route exact path = "/" component = {App} />
             <Route exact path = "/topplayers" component={TopPlayers} />
             <Route exact path = "/topclans" component={TopClans} />
+            <Route exact path = "/profile/:tag" component={PlayerProfile}/>
         </div> 
     </BrowserRouter>
     </div>

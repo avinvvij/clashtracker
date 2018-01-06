@@ -3,8 +3,11 @@ export function top_player_reducer(state = {} , action){
         case 'TOP_PLAYERS':
             return {...state , top_players: action.payload};
         case 'TOP_CLANS':
-            console.log(action.payload);
             return {...state , top_clans: action.payload};
+        case 'PLAYER_PROFILE':
+            console.log(action.payload);
+            return {...state , player_profile: action.payload}
+            return
         default:
             return state;
     }

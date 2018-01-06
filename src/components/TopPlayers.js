@@ -36,10 +36,10 @@ class TopPlayers extends Component{
                                 #{Player.tag}
                             </td>
                             <td>
-                                {Player.name}
+                                <b>{Player.name}</b>
                             </td>
                             <td>
-                                {Player.trophies}
+                                <b>{Player.trophies}</b>
                             </td>
                             <td>
                                 
