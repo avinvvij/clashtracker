@@ -50,7 +50,7 @@ class Header extends Component{
                 <form> 
                     <FormGroup className = "custom-header-form" >
                         <InputGroup>
-                    <DropdownButton
+                    <DropdownButton className="custom-dropdown-button"
 					componentClass={InputGroup.Button}
 					id="input-dropdown-addon"
 					title={this.state.dropdown_title}
@@ -59,9 +59,9 @@ class Header extends Component{
                         <MenuItem key="2" onClick={()=>this.searchDropDownClicked(2)}>Clan</MenuItem>
                         <MenuItem key="3" onClick={()=>this.searchDropDownClicked(3)}>Tournament</MenuItem>
 				    </DropdownButton>
-				    <FormControl type="text" placeholder={this.state.search_place_holder}/>
-				        <InputGroup.Button>
-					        <Button><Glyphicon glyph="search" /></Button>
+				    <FormControl type="text" placeholder={this.state.search_place_holder} />
+				        <InputGroup.Button className = "custom-header-input" className="custom-search-button">
+					        <Button c><Glyphicon glyph="search" /></Button>
 				        </InputGroup.Button>
 			        </InputGroup>
                     </FormGroup>

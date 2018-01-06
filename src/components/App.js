@@ -4,11 +4,19 @@ import {Carousel , CarouselItem} from 'react-bootstrap';
 class App extends Component{
 
     render(){
+        const image_carousel_item1 = require('../images/carousel_item_electrowiz.png');
+        const image_carousel_item2 = require('../images/carousel_item_princess.png');
         return(
         <div>
             <Carousel>
                 <CarouselItem>
-                  <img height = {300} width = {1400} src="http://www.amazestone.com/wp-content/uploads/2016/03/Belgium-Black-1200x480.jpg" />  
+                  <img src={image_carousel_item1} />  
+                  <Carousel.Caption>
+				    <h3>Keep A Track Of Your Chest Cycle</h3>
+			    </Carousel.Caption>
+                </CarouselItem>
+                <CarouselItem>
+                  <img src={image_carousel_item2} />  
                 </CarouselItem>
             </Carousel>
         </div>
