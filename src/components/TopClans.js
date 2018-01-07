@@ -13,10 +13,7 @@ class TopClans extends Component{
 
     componentWillReceiveProps(nextProps){
         console.log(nextProps.top_clan_reducer);
-        if(nextProps.top_clan_reducer.top_clans){
-            this.data_avaiable = true;
-            this.progress_bar_class = "custom-progressbar-hidden";
-        }
+
     }
 
     return_list_of_top_clans = ({top_clan_reducer})=>
@@ -62,16 +59,15 @@ class TopClans extends Component{
 
     componentWillMount(){
         this.props.getTopClans();
-        if(this.props.top_clan_reducer.top_clans){
-            this.progress_bar_class = "custom-progressbar-hidden";
-        }
     }
 
     render(){
         return(
             <div>
-                <ProgressBar bsStyle="success" className = {this.progress_bar_class} active now={100} label={"Loading"} />
-                <Table className = "table-custom" responsive>
+               {!this.props.top_clan_reducer.top_clans && <ProgressBar bsStyle="success"  active now={100} label={"Loading"} />}
+               { 
+                   this.props.top_clan_reducer.top_clans &&  
+                   <Table className = "table-custom" responsive>
                     <thead>
 			            <tr>
                             <th>Rank</th>
@@ -84,7 +80,7 @@ class TopClans extends Component{
 			            </tr>
                         {this.return_list_of_top_clans(this.props)}
 		            </thead>
-                </Table>
+                </Table>}
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Table} from 'react-bootstrap';
+import {Table , ProgressBar} from 'react-bootstrap';
 
 import {getTopPlayers} from '../actions';
 
@@ -98,6 +98,8 @@ class TopPlayers extends Component{
                    <TableHeaderColumn dataField = "trophies">Trophies</TableHeaderColumn>
                    <TableHeaderColumn dataField = "clan.name">Clan</TableHeaderColumn>
                 </BootstrapTable> */}
+                {!this.props.top_player_reducer.top_players && <ProgressBar bsStyle="success"  active now={100} label={"Loading"} />}
+               { this.props.top_player_reducer.top_players &&
                 <Table className = "table-custom" responsive>
                     <thead>
 			            <tr>
@@ -111,7 +113,7 @@ class TopPlayers extends Component{
 			            </tr>
                         {this.return_top_player_list(this.props)}
 		            </thead>
-                </Table>
+                </Table>}
             </div>
         );
     }
