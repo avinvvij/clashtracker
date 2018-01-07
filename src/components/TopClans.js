@@ -1,15 +1,22 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Table} from 'react-bootstrap';
+import {Table , ProgressBar} from 'react-bootstrap';
 
 //action 
 import {getTopClans} from "../actions"
 
 class TopClans extends Component{
 
+    data_available = false;
+    progress_bar_class = "custom-progressbar-display";
+
     componentWillReceiveProps(nextProps){
         console.log(nextProps.top_clan_reducer);
+        if(nextProps.top_clan_reducer.top_clans){
+            this.data_avaiable = true;
+            this.progress_bar_class = "custom-progressbar-hidden";
+        }
     }
 
     return_list_of_top_clans = ({top_clan_reducer})=>
@@ -28,7 +35,7 @@ class TopClans extends Component{
                                 #{Clan.tag}
                             </td>
                             <td>
-                            <img height={28} width={25} alt="" src = {Clan.badge.image}/> {Clan.name}
+                            <img height={28} width={25} alt="" src = {Clan.badge.image}/> <b>{Clan.name}</b>
                             </td>
                             <td>
                                 {Clan.score}
@@ -50,16 +57,20 @@ class TopClans extends Component{
     }
 
     componentDidMount(){
-
+        
     }
 
     componentWillMount(){
         this.props.getTopClans();
+        if(this.props.top_clan_reducer.top_clans){
+            this.progress_bar_class = "custom-progressbar-hidden";
+        }
     }
 
     render(){
         return(
             <div>
+                <ProgressBar bsStyle="success" className = {this.progress_bar_class} active now={100} label={"Loading"} />
                 <Table className = "table-custom" responsive>
                     <thead>
 			            <tr>

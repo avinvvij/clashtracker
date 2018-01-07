@@ -1,11 +1,13 @@
 import React , {Component} from 'react';
 import {FormControl , Button , DropdownButton , MenuItem,InputGroup,Glyphicon ,NavItem ,FormGroup ,Navbar ,  NavbarBrand , Nav } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
+var player_profile_link = "";
 class Header extends Component{
 
-    constructor(props){
-        super(props);
+    constructor(props , context){
+        super(props , context);
         this.state = {
             search_place_holder: 'Player Tag #XXXXXX',
             dropdown_title: 'Player',
@@ -13,14 +15,24 @@ class Header extends Component{
         }
     }
 
+    static contextTypes = {
+        router: PropTypes.object
+      }
+
     onPlayerIdChange = (event)=>{
-        console.log(event.target.value);
-        this.setState({player_tag: event.target.value});
+        if(event.target.value != '#'){
+            var player_tag_for_state = event.target.value.replace('#' , '');
+            this.setState({player_tag: player_tag_for_state});
+            player_profile_link = "/profile/"+player_tag_for_state;
+            console.log(player_profile_link);
+    }
     }
 
     playerInputClicked = (event)=>{
         event.preventDefault();
         console.log(this.state.player_tag);
+        var player_tag = this.state.player_tag;
+        this.context.router.history.push('/profile/'+player_tag);
     }
 
     searchDropDownClicked(id){
@@ -63,8 +75,8 @@ class Header extends Component{
                         <MenuItem key="3" onClick={()=>this.searchDropDownClicked(3)}>Tournament</MenuItem>
 				    </DropdownButton>
 				    <FormControl type="text"  onChange = {this.onPlayerIdChange} placeholder={this.state.search_place_holder} />
-				        <InputGroup.Button className = "custom-header-input" className="custom-search-button">
-					        <Link to="/profile/1"><Button c><Glyphicon glyph="search" /></Button></Link>
+				        <InputGroup.Button className = "custom-header-input custom-search-button">
+					        <Link to={player_profile_link}><Button className="custom-search-button"><Glyphicon glyph="search" /></Button></Link>
 				        </InputGroup.Button>
 			        </InputGroup>
                     </FormGroup>

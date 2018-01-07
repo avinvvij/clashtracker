@@ -11,8 +11,20 @@
     }
 }
 
+.custom-progressbar-display{
+    display: block;
+}
+
+.custom-progressbar-hidden{
+    display: none;
+}
+
 .custom-search-button{
     vertical-align: top;
+}
+
+.custom-search-button:focus, .custom-search-button:active, .custom-search-button:hover{
+    outline: 0px;
 }
 
 .carousel-caption{

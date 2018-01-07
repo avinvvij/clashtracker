@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {Carousel , CarouselItem , ResponsiveEmbed} from 'react-bootstrap';
 import  styles from '../styles/main.css'
+import 'loaders.css/src/animations/ball-spin-fade-loader.scss';
 class App extends Component{
 
     render(){
