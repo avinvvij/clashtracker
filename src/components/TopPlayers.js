@@ -108,7 +108,7 @@ class TopPlayers extends Component{
                             <th>Name</th>
                             <th>Trophies</th>
                             <th>Clan</th>
-                            <th>League</th>
+                            <th>Season League</th>
                             <th>Previous Rank</th>
 			            </tr>
                         {this.return_top_player_list(this.props)}
