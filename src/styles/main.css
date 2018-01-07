@@ -1,7 +1,10 @@
 
+body{
+    background: #f3efef;
+}
 
 @media screen and (min-width: 768px) {
-    body { padding-top: 50px; }
+    body { padding-top: 50px;}
 }
 
 @media only screen and (max-width: 767px){
@@ -9,6 +12,27 @@
     .custom-dropdown-button{
         width: 100%;
     }
+}
+
+@media (min-width: 1125px){
+    .custom-col{
+        width: 5%;
+    }
+}
+
+.player-level-tag {
+    position: absolute;
+    top: 11px;
+    left: 27px;
+    color: #FFFFFF;
+}
+
+.player-name{
+    font-size: 30px;
+}
+
+.player-panel {
+    margin: 10px;
 }
 
 .custom-progressbar-display{
