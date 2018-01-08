@@ -22,6 +22,19 @@ body{
     color: #1c75a0;
 }
 
+.battle-title-victory , .battle-title-loss{
+    font-weight: 1000;
+
+}
+
+.battle-title-victory{
+    color: #14a1f1;
+}
+
+.battle-title-loss{
+    color: #f32525;
+}
+
 .custom-chest-display{
     outline-color: #0bbcf1;
     outline-offset: 1px;

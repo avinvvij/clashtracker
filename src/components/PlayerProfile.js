@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {ProgressBar ,Image ,Panel , Badge , Grid, Row, Tabs , Tab , Col} from 'react-bootstrap';
+import {ProgressBar ,Image ,Panel  , Badge , Grid, Row, Tabs , Tab , Col} from 'react-bootstrap';
 
 //action
 import {getPlayerProfile} from '../actions'
@@ -36,6 +36,23 @@ class PlayerProfile extends Component{
 
     componentWillMount(){
         this.props.getPlayerProfile(this.props.match.params.tag);
+    }
+
+
+    displayUserBattles = ({battles})=>{
+        return battles.map((battle)=>{
+            return(
+                <Col lg={6} md={6} sm={12} xs={12}>
+                <br/>
+                <div className={battle.winner<0? "panel panel-default":"panel panel-default"}>
+                    <div className="panel-heading"><b className={battle.winner<=0? "battle-title-loss":"battle-title-victory"}>{battle.winner == 0 ? "Draw" : battle.winner < 0 ? "Loss" : "Victory"}</b></div>
+                    <div className="panel-body">
+                        Panel content
+                    </div>
+                </div>
+                </Col>
+            )
+        })
     }
 
     displayChestCycle = ({upcoming})=>{
@@ -168,7 +185,13 @@ class PlayerProfile extends Component{
                             </div>
                         </Tab>
                         <Tab eventKey={2} title="Battles">
-                            Tab 2 content
+                            <div>
+                                <Grid>
+                                    <Row>
+                                        {this.displayUserBattles(this.props.player_reducer.player_profile)}
+                                    </Row>  
+                                </Grid>
+                            </div>
                         </Tab>
                         <Tab eventKey={3} title="Cards">
                             Tab 3 content
