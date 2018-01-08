@@ -14,6 +14,25 @@ body{
     }
 }
 
+.chest-text{
+    position: absolute;
+    top: 67%;
+    left: 31%;
+    background: #ffffff;
+    color: #1c75a0;
+}
+
+.custom-chest-display{
+    outline-color: #0bbcf1;
+    outline-offset: 1px;
+    outline-width: 1px;
+    outline-style: groove;
+}
+
+ .custom-chest-display , .normal-chest-display{
+    margin:5px;
+}
+
 .player-custom-col{
     margin-top: 7px;
     margin-bottom: 7px;
