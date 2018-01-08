@@ -46,17 +46,46 @@ class PlayerProfile extends Component{
                 <Panel className="player-panel">
                     <Grid fluid>
                     <Row>
-                        <Col sm = {1} md={1} lg={1} className = "custom-col"><b className = "player-name">{this.props.player_reducer.player_profile.name}</b></Col>
-                        <Col sm={1} md={1} lg={1}><div><img width = {42} height = {42} src = {player_level_img_link} tabIndex = "-1" title = {this.props.player_reducer.player_profile.stats.level}/><b className="player-level-tag">{this.props.player_reducer.player_profile.stats.level} </b></div></Col>
+                        <Col sm = {6} md={6} lg={6} ><b className = "player-name">{this.props.player_reducer.player_profile.name}</b></Col>
                     </Row>
-                    <Row><h5><img width = {30} height={35} src = {this.props.player_reducer.player_profile.clan.badge.image}/>  {this.props.player_reducer.player_profile.clan.name} ></h5><br/>
+                    <Row>
+                        <Col  sm={12} md={12} lg={12}><div><img width = {42} height = {42} src = {player_level_img_link} tabIndex = "-1" title = {this.props.player_reducer.player_profile.stats.level}/><b className="player-level-tag">{this.props.player_reducer.player_profile.stats.level} </b></div></Col>
+                    </Row>
+                    <Row>
+                    <Col  sm={12} md={12} lg={12}><h5><img width = {30} height={35} src = {this.props.player_reducer.player_profile.clan.badge.image}/>  {this.props.player_reducer.player_profile.clan.name} ></h5><br/>
+                    </Col>
                     </Row>
                     </Grid>
                     <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
                         <Tab eventKey={1} title="Profile">
                             <div>
-                                <h4>Statistics</h4>
-
+                            <Row>
+                            <Col lg = {12} md={12} sm = {12} className="player-custom-col">
+                                <h4>Player Statistics...</h4>
+                            </Col>
+                            </Row>
+                            <Row>
+                            </Row>
+                            <Row>
+                                <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
+                                    <img width={18} height={18} src={require('../images/trophy_icon.png')} /><b> Trophies:  {this.props.player_reducer.player_profile.trophies}</b>
+                                </Col>
+                                 <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
+                                    <img width={18} height={18} src={require('../images/trophy_icon.png')} /><b> Maximum Trophies:  {this.props.player_reducer.player_profile.stats.maxTrophies}</b>
+                                </Col>
+                                <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
+                                    <img width={18} height={18} src={require('../images/cards_found_ico.png')} /><b> Cards Found:  {this.props.player_reducer.player_profile.stats.cardsFound}</b>
+                                </Col>
+                                 <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
+                                    <img width={18} height={18} src={require('../images/cards_found_ico.png')} /><b> Favorite Card:  {this.props.player_reducer.player_profile.stats.favoriteCard.name} <img src={this.props.player_reducer.player_profile.stats.favoriteCard.icon} width={30} height={33}/></b>
+                                </Col>
+                                                                <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
+                                    <img width={18} height={18} src={require('../images/cards_found_ico.png')} /><b> Total Donation:  {this.props.player_reducer.player_profile.stats.totalDonations}</b>
+                                </Col>
+                                 <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
+                                    <img width={18} height={18} src={require('../images/cards_found_ico.png')} /><b> Tournament Cards Won:  {this.props.player_reducer.player_profile.stats.tournamentCardsWon}</b>
+                                </Col>
+                            </Row>
                             </div>
                         </Tab>
                         <Tab eventKey={2} title="Battles">

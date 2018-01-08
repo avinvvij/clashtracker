@@ -14,6 +14,11 @@ body{
     }
 }
 
+.player-custom-col{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
 @media (min-width: 1125px){
     .custom-col{
         width: 5%;
