@@ -25,11 +25,11 @@ class Header extends Component{
             this.setState({player_tag: player_tag_for_state});
             player_profile_link = "/profile/"+player_tag_for_state;
             console.log(player_profile_link);
-    }
+        }
     }
 
     playerInputClicked = (event)=>{
-        event.preventDefault();
+        // event.preventDefault();
         console.log(this.state.player_tag);
         var player_tag = this.state.player_tag;
         this.context.router.history.push('/profile/'+player_tag);
@@ -62,7 +62,7 @@ class Header extends Component{
 		</Navbar.Header>
             <Nav>
                 <Navbar.Form>
-                <form onSubmit = {this.playerInputClicked}> 
+                <form onSubmit = {this.playerInputClicked.bind(this)}> 
                     <FormGroup className = "custom-header-form" >
                         <InputGroup>
                     <DropdownButton className="custom-dropdown-button"

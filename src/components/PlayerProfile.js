@@ -45,10 +45,11 @@ class PlayerProfile extends Component{
                 var the_chest = chest.toString();
                 i++;
                 var classname_chest = i==1?"custom-chest-display":"normal-chest-display"; 
-                var chest_text = i==1?"Next":"+"+i;
+                var j = i-1;
+                var chest_text = i==1?"Next":"+"+j;
                 return(
                     <Col key={i} lg={1} md = {1} sm = {2} xs = {3}>
-                        <div><img width = {70} height={70} className = {classname_chest} src={require("../images/"+the_chest+".png")} /> <Badge className="chest-text">{chest_text}</Badge> </div>
+                        <div><img width = {60} height={60} className = {classname_chest} src={require("../images/"+the_chest+".png")} /> <Badge className="chest-text">{chest_text}</Badge> </div>
                     </Col>
                 );
             });
@@ -149,19 +150,19 @@ class PlayerProfile extends Component{
                             <Row>
                                 {this.displayChestCycle(this.props.player_reducer.player_profile.chestCycle)}
                                 <Col lg={1} md = {1} sm = {2} xs = {3}>
-                                   <div><img width = {70} height={70} className = "normal-chest-display" src={require("../images/giant.png")} /> <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.giant}</Badge> </div>
+                                   <div><img width = {60} height={60} className = "normal-chest-display" src={require("../images/giant.png")} /> <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.giant}</Badge> </div>
                                 </Col>
                                 <Col lg={1} md = {1} sm = {2} xs = {3}>
-                                    <div><img width = {70} height={70} className = "normal-chest-display"  src={require("../images/magical.png")} /> <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.magical}</Badge> </div>
+                                    <div><img width = {60} height={60} className = "normal-chest-display"  src={require("../images/magical.png")} /> <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.magical}</Badge> </div>
                                 </Col>
                                 <Col lg={1} md = {1} sm = {2} xs = {3}>
-                                    <div><img width = {70} height={70} className = "normal-chest-display"  src={require("../images/superMagical.png")} /> <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.superMagical}</Badge> </div>
+                                    <div><img width = {60} height={60} className = "normal-chest-display"  src={require("../images/superMagical.png")} /> <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.superMagical}</Badge> </div>
                                 </Col>
                                 <Col lg={1} md = {1} sm = {2} xs = {3}>
-                                    <div><img width = {70} height={70} className = "normal-chest-display"  src={require("../images/epic.png")} /> <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.epic}</Badge> </div>
+                                    <div><img width = {60} height={60} className = "normal-chest-display"  src={require("../images/epic.png")} /> <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.epic}</Badge> </div>
                                 </Col>
                                 <Col lg={1} md = {1} sm = {2} xs = {3}>
-                                    <div><img width = {70} height={70} className = "normal-chest-display"  src={require("../images/legendary.png")} />  <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.legendary}</Badge> </div>
+                                    <div><img width = {60} height={60} className = "normal-chest-display"  src={require("../images/legendary.png")} />  <Badge className="chest-text">+{this.props.player_reducer.player_profile.chestCycle.legendary}</Badge> </div>
                                 </Col>
                             </Row>
                             </div>
