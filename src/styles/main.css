@@ -22,6 +22,10 @@ body{
     color: #1c75a0;
 }
 
+.team-player-name{
+    text-align: center;
+}
+
 .battle-title-victory , .battle-title-loss{
     font-weight: 1000;
 
