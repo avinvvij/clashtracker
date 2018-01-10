@@ -1,6 +1,7 @@
 
 body{
     background: #f3efef;
+    font-size: 18px;
 }
 
 @media screen and (min-width: 768px) {
@@ -12,6 +13,10 @@ body{
     .custom-dropdown-button{
         width: 100%;
     }
+}
+
+.custom-nav-brand{
+    font-size: 22px;
 }
 
 .chest-text{
@@ -63,8 +68,8 @@ body{
 
 .player-level-tag {
     position: absolute;
-    top: 11px;
-    left: 27px;
+    top: 10px;
+    left: 24px;
     color: #FFFFFF;
 }
 
@@ -84,8 +89,14 @@ body{
     display: none;
 }
 
+.form-control{
+    height:auto;
+}
+
 .custom-search-button{
     vertical-align: top;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
 }
 
 .custom-search-button:focus, .custom-search-button:active, .custom-search-button:hover{

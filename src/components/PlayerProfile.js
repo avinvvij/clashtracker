@@ -44,19 +44,28 @@ class PlayerProfile extends Component{
             return(
                 <Col lg={12} md={12} sm={12} xs={12}>
                 <br/>
-                <div className={battle.winner<0? "panel panel-default":"panel panel-default"}>
+                <div className="panel panel-default">
                     <div className="panel-heading"><Row><Col lg = {4} md = {4} sm = {3} xs = {4}><b className={battle.winner<=0? "battle-title-loss":"battle-title-victory"}>{battle.winner == 0 ? "Draw" : battle.winner < 0 ? "Loss" : "Victory"}</b></Col><Col lg={4} md={4} sm={4} className="team-player-name"><img width={35} height={30} src={require('../images/blue_crown.png')}/> <b className="battle-title-victory"> {battle.teamCrowns} </b>- <b className="battle-title-loss">{battle.opponentCrowns}</b> <img width={35} height={30} src={require('../images/red_crown.png')}/></Col></Row></div>
                     <div className="panel-body">
                         <Row>
+                        <Col lg={5} md={5} sm={5} xs={5}>
+                            <Row>
                             {battle.team.map((teamPlayer)=>{
                                 return(
                                     <Col className = "team-player-name player-custom-col" lg={battle.team.length==2?6:12} md={battle.team.length==2?6:12} sm={battle.team.length==2?6:12}>
-                                        <b>{teamPlayer.name}</b>
+                                        <Row>
+                                            <Col lg={12} md={12} sm={12} xs={12}><b>{teamPlayer.name}</b></Col>
+                                            <Col lg={12} md={12} sm={12} xs={12}> 
+                                            {teamPlayer.deck.map((deckItem)=>{
+                                            return(
+                                                <img width={55} height={60} src={deckItem.icon} />
+                                            );
+                                        })}</Col>
+                                        </Row>
                                     </Col>
                                 )
                             })}
-                        </Row>
-                        <Row>
+                        
                             {
                                 battle.team.map((teamPlayer)=>{
                                     return (
@@ -70,11 +79,17 @@ class PlayerProfile extends Component{
                                     )
                                 })
                             }
-                        </Row>
-                        <Row>
-                            <Col lg={12} md={12} xs={12} sm={12} className ="team-player-name player-custom-col"><b className="battle-title-victory"> VS </b></Col>
-                        </Row>
-                        <Row>
+                            </Row>
+                            </Col>
+                            <Col lg={2} md={2} xs={2} sm={2} className ="team-player-name player-custom-col"><b className="battle-title-victory">VS</b></Col>
+                            <Col lg={5} md={5} sm={5} xs={5}>
+                            {battle.opponent.map((teamPlayer)=>{
+                                return(
+                                    <Col className = "team-player-name player-custom-col" lg={battle.team.length==2?6:12} md={battle.team.length==2?6:12} sm={battle.team.length==2?6:12}>
+                                        <b>{teamPlayer.name}</b>
+                                    </Col>
+                                )
+                            })}
                             {
                                 battle.opponent.map((teamPlayer)=>{
                                     return (
@@ -88,15 +103,8 @@ class PlayerProfile extends Component{
                                     )
                                 })
                             }
-                        </Row>
-                         <Row>
-                            {battle.opponent.map((teamPlayer)=>{
-                                return(
-                                    <Col className = "team-player-name player-custom-col" lg={battle.team.length==2?6:12} md={battle.team.length==2?6:12} sm={battle.team.length==2?6:12}>
-                                        <b>{teamPlayer.name}</b>
-                                    </Col>
-                                )
-                            })}
+                            
+                            </Col>
                         </Row>
                     </div>
                 </div>
@@ -237,9 +245,9 @@ class PlayerProfile extends Component{
                         <Tab eventKey={2} title="Battles">
                             <div>
                                 <Grid>
-                                    <Row className="row flex">
-                                        {this.displayUserBattles(this.props.player_reducer.player_profile)}
-                                    </Row>  
+                                    <Row>
+                                    {this.displayUserBattles(this.props.player_reducer.player_profile)}                                        
+                                    </Row>
                                 </Grid>
                             </div>
                         </Tab>

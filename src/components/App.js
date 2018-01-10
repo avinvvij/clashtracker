@@ -11,12 +11,10 @@ class App extends Component{
         <div>
             <Carousel>
                 <CarouselItem>
-                  <img src={image_carousel_item1} />  
-                  <Carousel.Caption>
-			    </Carousel.Caption>
+                  <img width={1400} height = {512} src={image_carousel_item1} />  
                 </CarouselItem>
                 <CarouselItem>
-                  <img src={image_carousel_item2} />  
+                  <img width={1400} height = {512} src={image_carousel_item2} />  
                 </CarouselItem>
             </Carousel>
         </div>

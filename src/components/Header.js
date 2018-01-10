@@ -55,9 +55,8 @@ class Header extends Component{
 	<Navbar inverse collapseOnSelect className="custom-nav" fixedTop>
 		<Navbar.Header>
 			<Navbar.Brand>
-				<Link to="/">Clash Tracker</Link>
+				<Link to="/"><b className="custom-nav-brand">Clash Tracker</b></Link>
 			</Navbar.Brand>
-			
             <Navbar.Toggle />
 		</Navbar.Header>
             <Nav>
