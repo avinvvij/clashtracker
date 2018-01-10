@@ -66,44 +66,30 @@ class PlayerProfile extends Component{
                                 )
                             })}
                         
-                            {
-                                battle.team.map((teamPlayer)=>{
-                                    return (
-                                    <Col className = "team-player-name player-custom-col" lg={battle.team.length==2?6:12} md={battle.team.length==2?6:12} sm={battle.team.length==2?6:12}>
-                                        {teamPlayer.deck.map((deckItem)=>{
-                                            return(
-                                                <img width={55} height={60} src={deckItem.icon} />
-                                            );
-                                        })}
-                                    </Col>
-                                    )
-                                })
-                            }
+                         
                             </Row>
                             </Col>
                             <Col lg={2} md={2} xs={2} sm={2} className ="team-player-name player-custom-col"><b className="battle-title-victory">VS</b></Col>
                             <Col lg={5} md={5} sm={5} xs={5}>
+                            <Row>
                             {battle.opponent.map((teamPlayer)=>{
                                 return(
                                     <Col className = "team-player-name player-custom-col" lg={battle.team.length==2?6:12} md={battle.team.length==2?6:12} sm={battle.team.length==2?6:12}>
-                                        <b>{teamPlayer.name}</b>
-                                    </Col>
-                                )
-                            })}
-                            {
-                                battle.opponent.map((teamPlayer)=>{
-                                    return (
-                                    <Col className = "team-player-name player-custom-col" lg={battle.team.length==2?6:12} md={battle.team.length==2?6:12} sm={battle.team.length==2?6:12}>
-                                        {teamPlayer.deck.map((deckItem)=>{
+                                        <Row>
+                                            <Col lg={12} md={12} sm={12} xs={12}><b>{teamPlayer.name}</b></Col>
+                                            <Col lg={12} md={12} sm={12} xs={12}> 
+                                            {teamPlayer.deck.map((deckItem)=>{
                                             return(
                                                 <img width={55} height={60} src={deckItem.icon} />
                                             );
-                                        })}
+                                        })}</Col>
+                                        </Row>
                                     </Col>
-                                    )
-                                })
-                            }
-                            
+                                )
+                            })}
+                        
+                         
+                            </Row>
                             </Col>
                         </Row>
                     </div>
