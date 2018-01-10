@@ -45,7 +45,7 @@ class PlayerProfile extends Component{
                 <Col lg={12} md={12} sm={12} xs={12}>
                 <br/>
                 <div className="panel panel-default">
-                    <div className="panel-heading"><Row><Col lg = {4} md = {4} sm = {3} xs = {4}><b className={battle.winner<=0? "battle-title-loss":"battle-title-victory"}>{battle.winner == 0 ? "Draw" : battle.winner < 0 ? "Loss" : "Victory"}</b></Col><Col lg={4} md={4} sm={4} className="team-player-name"><img width={35} height={30} src={require('../images/blue_crown.png')}/> <b className="battle-title-victory"> {battle.teamCrowns} </b>- <b className="battle-title-loss">{battle.opponentCrowns}</b> <img width={35} height={30} src={require('../images/red_crown.png')}/></Col></Row></div>
+                    <div className="panel-heading"><Row><Col lg = {4} md = {4} sm = {3} xs = {2}><b className={battle.winner<=0? "battle-title-loss":"battle-title-victory"}>{battle.winner == 0 ? "Draw" : battle.winner < 0 ? "Loss" : "Victory"}</b></Col><Col lg={4} md={4} sm={12} xs={12} className="team-player-name"><img width={35} height={30} src={require('../images/blue_crown.png')}/> <b className="battle-title-victory"> {battle.teamCrowns} </b>- <b className="battle-title-loss">{battle.opponentCrowns}</b> <img width={35} height={30} src={require('../images/red_crown.png')}/></Col></Row></div>
                     <div className="panel-body">
                         <Row>
                         <Col lg={5} md={5} sm={5} xs={5}>
