@@ -185,10 +185,10 @@ class PlayerProfile extends Component{
                                     <img width={18} height={18} src={require('../images/trophy_icon.png')} /><b> Total Wins:  {this.props.player_reducer.player_profile.games.wins}</b>
                                 </Col>
                                 <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
-                                    <img width={18} height={18} src={require('../images/cards_found_ico.png')} /><b> Tournament Games:  {this.props.player_reducer.player_profile.games.tournamentGames}</b>
+                                    <img width={18} height={18} src={require('../images/torney-ico.png')} /><b> Tournament Games:  {this.props.player_reducer.player_profile.games.tournamentGames}</b>
                                 </Col>
                                  <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
-                                    <img width={18} height={18} src={require('../images/cards_found_ico.png')} /><b> Tournament Cards Won:  {this.props.player_reducer.player_profile.stats.tournamentCardsWon} </b>
+                                    <img width={18} height={18} src={require('../images/tournament_cards_won_ico.png')} /><b> Tournament Cards Won:  {this.props.player_reducer.player_profile.stats.tournamentCardsWon} </b>
                                 </Col>
                                 <Col lg = {3} md={6} sm = {6} xs = {6} className="player-custom-col">
                                     <img width={18} height={18} src={require('../images/total_donations_icon.png')} /><b> Challenge Cards Won:  {this.props.player_reducer.player_profile.stats.challengeCardsWon}</b>
