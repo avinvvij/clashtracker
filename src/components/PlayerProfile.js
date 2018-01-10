@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {ProgressBar ,Image ,Panel  , Badge , Grid, Row, Tabs , Tab , Col} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 //action
 import {getPlayerProfile} from '../actions'
@@ -54,7 +55,7 @@ class PlayerProfile extends Component{
                                 return(
                                     <Col className = "team-player-name player-custom-col" lg={battle.team.length==2?6:12} md={battle.team.length==2?6:12} sm={battle.team.length==2?6:12}>
                                         <Row>
-                                            <Col lg={12} md={12} sm={12} xs={12}><b>{teamPlayer.name}</b></Col>
+                                            <Col lg={12} md={12} sm={12} xs={12}><Link to={"/profile/"+teamPlayer.tag}><b>{teamPlayer.name}</b></Link></Col>
                                             <Col lg={12} md={12} sm={12} xs={12}> 
                                             {teamPlayer.deck.map((deckItem)=>{
                                             return(
@@ -76,7 +77,7 @@ class PlayerProfile extends Component{
                                 return(
                                     <Col className = "team-player-name player-custom-col" lg={battle.team.length==2?6:12} md={battle.team.length==2?6:12} sm={battle.team.length==2?6:12}>
                                         <Row>
-                                            <Col lg={12} md={12} sm={12} xs={12}><b>{teamPlayer.name}</b></Col>
+                                            <Col lg={12} md={12} sm={12} xs={12}><Link to={"/profile/"+teamPlayer.tag}><b>{teamPlayer.name}</b></Link></Col>
                                             <Col lg={12} md={12} sm={12} xs={12}> 
                                             {teamPlayer.deck.map((deckItem)=>{
                                             return(
