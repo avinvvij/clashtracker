@@ -237,12 +237,7 @@ class PlayerProfile extends Component{
                                 </Grid>
                             </div>
                         </Tab>
-                        <Tab eventKey={3} title="Cards">
-                            Tab 3 content
-                        </Tab>
-                        <Tab eventKey={4} title="Decks">
-                            Tab 4 content
-                        </Tab>
+                        
                 </Tabs>
                 </Panel>
                 }

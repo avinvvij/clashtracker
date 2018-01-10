@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Table , ProgressBar} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 import {getTopPlayers} from '../actions';
 
@@ -36,7 +37,7 @@ class TopPlayers extends Component{
                                 #{Player.tag}
                             </td>
                             <td>
-                                <b>{Player.name}</b>
+                                <Link to={"/profile/"+Player.tag}><b>{Player.name}</b></Link>
                             </td>
                             <td>
                                 <b>{Player.trophies}</b>
