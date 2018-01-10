@@ -58,7 +58,7 @@ class PlayerProfile extends Component{
                                             <Col lg={12} md={12} sm={12} xs={12}> 
                                             {teamPlayer.deck.map((deckItem)=>{
                                             return(
-                                                <img width={55} height={60} src={deckItem.icon} />
+                                                <img width={55} height={60} className = "card-display" src={deckItem.icon} />
                                             );
                                         })}</Col>
                                         </Row>
@@ -80,7 +80,7 @@ class PlayerProfile extends Component{
                                             <Col lg={12} md={12} sm={12} xs={12}> 
                                             {teamPlayer.deck.map((deckItem)=>{
                                             return(
-                                                <img width={55} height={60} src={deckItem.icon} />
+                                                <img className = "card-display" width={55} height={60} src={deckItem.icon} />
                                             );
                                         })}</Col>
                                         </Row>

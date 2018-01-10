@@ -1,17 +1,24 @@
 
 body{
     background: #f3efef;
-    font-size: 18px;
 }
 
 @media screen and (min-width: 768px) {
     body { padding-top: 50px;}
+    .card-display{
+        width: 55px; 
+        height: 60px;
+    }
 }
 
 @media only screen and (max-width: 767px){
     body{ padding-top: 138px;}
     .custom-dropdown-button{
         width: 100%;
+    }
+    .card-display{
+        width: 30px; 
+        height: 35px;
     }
 }
 
